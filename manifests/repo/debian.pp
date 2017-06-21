@@ -11,21 +11,21 @@ class jenkins::repo::debian
 
   if $::jenkins::lts  {
     apt::source { 'jenkins':
-      location    => 'http://pkg.jenkins-ci.org/debian-stable',
+      location    => 'http://pkg.jenkins.io/debian-stable',
       release     => 'binary/',
       repos       => '',
       key         => '150FDE3F7787E7D11EF4E12A9B7D32F2D50582E6',
-      key_source  => 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key',
+      key_source  => 'http://pkg.jenkins.io/debian/jenkins.io.key',
       include_src => false,
     }
   }
   else {
     apt::source { 'jenkins':
-      location    => 'http://pkg.jenkins-ci.org/debian',
+      location    => 'http://pkg.jenkins.io/debian',
       release     => 'binary/',
       repos       => '',
       key         => '150FDE3F7787E7D11EF4E12A9B7D32F2D50582E6',
-      key_source  => 'http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key',
+      key_source  => 'http://pkg.jenkins.io/debian/jenkins.io.key',
       include_src => false,
     }
   }
